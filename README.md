@@ -9,19 +9,23 @@ O resultado é gerado em `dist/`. O build verifica se todos os arquivos locais r
 
 Edite o conteúdo em `index.html` e mantenha as imagens em `public/assets/`. Não edite nem versione a pasta gerada `dist/`.
 
-## Cloudflare Pages — ativação inicial
+## Cloudflare Workers — publicação automática
 
-A conexão com o Cloudflare precisa ser feita na conta de hospedagem uma vez. Os arquivos do repositório, sozinhos, não ativam essa conexão.
+A integração Git já identificada no projeto Cloudflare é **Workers Builds**. A configuração `wrangler.jsonc` publica o conteúdo estático de `dist/` no Worker `site-antonia-moreira`.
 
-1. Em Workers & Pages, crie um projeto **Pages** usando **Import an existing Git repository / Connect to Git**.
-2. Autorize o aplicativo Cloudflare Workers and Pages a acessar `Ravyt-Digital/site-antonia-moreira`.
-3. Selecione este repositório e a branch de produção `main`.
-4. Nome do projeto: `site-antonia-moreira`; framework: `None`; comando de build: `npm run build`; diretório de saída: `dist`; diretório raiz: raiz do repositório.
-5. Use Node.js 22 (`NODE_VERSION=22`, se necessário) e mantenha **Enable automatic production branch deployments** habilitado.
-6. Salve e confirme que o primeiro deploy termina com sucesso no painel.
+Configurações do projeto existente:
 
-Depois de ativar a integração Git, cada novo commit enviado à `main` dispara o build e a publicação no Cloudflare automaticamente. Alterações ainda não enviadas ao GitHub não disparam publicação. Use a integração Git de Pages, pois um projeto criado somente por Direct Upload não recebe automaticamente novos commits.
+- Repositório: `Ravyt-Digital/site-antonia-moreira`.
+- Branch de produção: `main`.
+- Diretório raiz: raiz do repositório.
+- Comando de build: `npm run build` (opcional no painel, pois Wrangler também executa esse build).
+- Comando de deploy: `npx wrangler deploy`.
+- Node.js: 22 ou superior.
 
-O workflow do GitHub Actions verifica o build a cada push e pull request. A publicação fica a cargo da integração nativa Cloudflare Pages; não é necessário cadastrar um token Cloudflare no repositório.
+O comando de build definido no Wrangler gera `dist/` antes da publicação, mesmo quando o comando de build do painel estiver vazio. Não use `wrangler pages deploy` neste projeto, que foi criado como Worker.
 
-Documentação: https://developers.cloudflare.com/pages/get-started/git-integration/
+Cada novo commit enviado à `main` dispara Workers Builds na integração existente. A publicação só está confirmada quando o check Cloudflare termina com sucesso. Alterações ainda não enviadas ao GitHub não disparam publicação.
+
+O workflow do GitHub Actions verifica o build a cada push e pull request. A publicação fica a cargo da integração nativa Workers Builds; não é necessário cadastrar um token Cloudflare no repositório.
+
+Documentação: https://developers.cloudflare.com/workers/static-assets/

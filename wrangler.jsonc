@@ -1,5 +1,6 @@
 {
   "name": "site-antonia-moreira",
-  "pages_build_output_dir": "./dist",
-  "compatibility_date": "2026-09-29"
+  "compatibility_date": "2026-09-29",
+  "build": { "command": "npm run build" },
+  "assets": { "directory": "./dist" }
 }
