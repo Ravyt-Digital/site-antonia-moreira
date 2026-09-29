@@ -1,0 +1,2062 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Francisca Antonia | Neuropsicóloga em Tianguá-CE</title>
+  <meta name="description"
+    content="Francisca Antonia Moreira da Rocha – Neuropsicóloga e Terapeuta Cognitivo-Comportamental em Tianguá-CE. CRP 11/18395. Avaliação neuropsicológica e psicoterapia." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --sage: #7aafc8;
+      --sage-light: #aed4e8;
+      --cream: #eef4f8;
+      --warm-white: #f5f9fc;
+      --charcoal: #2a2e35;
+      --muted: #6b6b6b;
+      --accent: #5b9ab8;
+      --border: rgba(122, 175, 200, 0.25);
+      --white: #ffffff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--warm-white);
+      color: var(--charcoal);
+      overflow-x: hidden;
+    }
+
+    /* ── NAVBAR ── */
+    #navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1.2rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.4s ease, backdrop-filter 0.4s ease, opacity 0.4s ease;
+      background: rgba(245, 240, 232, 0.45);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    #navbar.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--charcoal);
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.05rem;
+    }
+
+    .nav-logo .nav-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+
+    .nav-logo .nav-crp {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: var(--sage);
+      text-transform: uppercase;
+    }
+
+    .btn-agendar {
+      display: inline-block;
+      padding: 0.65rem 1.7rem;
+      border: 1.5px solid var(--sage);
+      border-radius: 50px;
+      background: transparent;
+      color: var(--charcoal);
+      font-family: 'Lato', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s, transform 0.2s, border-color 0.3s;
+    }
+
+    .btn-agendar:hover {
+      background: var(--sage);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    /* ── HERO ── */
+    #hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      padding: 0;
+      /* Garante que o banner ocupe a largura total da tela */
+    }
+
+    #hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom,
+          rgba(30, 28, 25, 0.18) 0%,
+          rgba(30, 28, 25, 0.42) 60%,
+          rgba(30, 28, 25, 0.72) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 2rem 8rem;
+      text-align: center;
+    }
+
+    .hero-tag {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sage-light);
+      margin-bottom: 1rem;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      font-weight: 300;
+      font-style: italic;
+      color: #fff;
+      line-height: 1.15;
+      max-width: 780px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-sub {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── SECTION BASE ── */
+    section {
+      padding: 6rem 6vw;
+      position: relative;
+    }
+
+    .section-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 0.8rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      color: var(--charcoal);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-body {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--muted);
+      max-width: 600px;
+    }
+
+    .divider {
+      width: 48px;
+      height: 2px;
+      background: var(--sage);
+      margin: 1.5rem 0;
+      border-radius: 2px;
+    }
+
+    /* ── 2. BOAS VINDAS ── */
+    #boas-vindas {
+      background: var(--cream);
+      text-align: center;
+      padding: 7rem 6vw;
+    }
+
+    .boas-vindas-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .intro-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 3vw, 2.3rem);
+      line-height: 1.4;
+      color: var(--charcoal);
+      font-style: italic;
+      position: relative;
+      padding: 0 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    /* ── 3. SOBRE MIM ── */
+    #sobre-mim {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+      align-items: center;
+      background: var(--warm-white);
+    }
+
+    .sobre-mim-img {
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+      position: relative;
+    }
+
+    .sobre-mim-img img {
+      width: 100%;
+      display: block;
+      border-radius: 4px;
+      transition: transform 0.5s ease;
+    }
+
+    .sobre-mim-img:hover img {
+      transform: scale(1.03);
+    }
+
+    .sobre-mim-img::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: -20px;
+      right: 20px;
+      bottom: -20px;
+      border: 2px solid var(--sage-light);
+      border-radius: 4px;
+      z-index: -1;
+    }
+
+    .credentials {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .cred-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .cred-dot {
+      width: 7px;
+      height: 7px;
+      min-width: 7px;
+      border-radius: 50%;
+      background: var(--sage);
+      margin-top: 0.45rem;
+    }
+
+    /* ── 4. O QUE E AVALIACAO ── */
+    #o-que-e-avaliacao {
+      background: var(--cream);
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .o-que-e-text {
+      order: 1;
+    }
+
+    .o-que-e-img {
+      order: 2;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    }
+
+    .o-que-e-img img {
+      width: 100%;
+      display: block;
+      border-radius: 4px;
+    }
+
+    /* ── 5. INDICACOES (GRID DE CARDS) ── */
+    #indicacoes {
+      background: var(--warm-white);
+      text-align: center;
+    }
+
+    #indicacoes .section-title {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 800px;
+    }
+
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.2rem;
+      margin-top: 4rem;
+    }
+
+    .card-ind {
+      min-width: 0;
+    }
+
+    .card-ind {
+      background: var(--white);
+      padding: 1.8rem 1.4rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      min-width: 0;
+    }
+
+    .card-ind:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(122, 175, 200, 0.15);
+      border-color: var(--sage);
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      color: var(--sage);
+      margin-bottom: 1.5rem;
+    }
+
+    .card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+    }
+
+    .card-body {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .cards-nav-mobile {
+      display: none;
+    }
+
+    /* ── 6. ETAPAS (LINHA DO TEMPO) ── */
+    #etapas {
+      background: var(--cream);
+    }
+
+    #etapas .center-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      background: var(--sage-light);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 1.5rem 3rem;
+      box-sizing: border-box;
+    }
+
+    .timeline-item.left {
+      left: 0;
+      text-align: right;
+    }
+
+    .timeline-item.right {
+      left: 50%;
+      text-align: left;
+    }
+
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background: var(--cream);
+      border: 4px solid var(--sage);
+      border-radius: 50%;
+      top: 2rem;
+      z-index: 2;
+    }
+
+    .timeline-item.left::after {
+      right: -9px;
+    }
+
+    .timeline-item.right::after {
+      left: -9px;
+    }
+
+    .timeline-content {
+      background: var(--white);
+      padding: 2.2rem 2rem;
+      border-radius: 6px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+      border: 1px solid var(--border);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .timeline-content:hover {
+      transform: scale(1.02);
+      border-color: var(--sage);
+    }
+
+    .timeline-step {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--sage);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.6rem;
+    }
+
+    .timeline-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 0.8rem;
+    }
+
+    .timeline-desc {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    /* ── 7. ABORDAGEM TCC ── */
+    #tcc {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+      align-items: center;
+      background: var(--warm-white);
+    }
+
+    .tcc-img {
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+      position: relative;
+    }
+
+    .tcc-img img {
+      width: 100%;
+      display: block;
+      border-radius: 4px;
+    }
+
+    /* ── 8. QUANDO FAZ SENTIDO ── */
+    #quando {
+      background: var(--cream);
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .quando-img {
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+      order: 2;
+    }
+
+    .quando-img img {
+      width: 100%;
+      display: block;
+      border-radius: 4px;
+    }
+
+    .quando-text {
+      order: 1;
+    }
+
+    /* ── 9. PSICOTERAPIA ── */
+    /* ── 9. PSICOTERAPIA ── */
+    #psicoterapia {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+      align-items: center;
+      background: var(--warm-white);
+    }
+
+    .psicoterapia-img {
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+      position: relative;
+    }
+
+    .psicoterapia-img img {
+      width: 100%;
+      display: block;
+      border-radius: 4px;
+      transition: transform 0.5s ease;
+    }
+
+    .psicoterapia-img:hover img {
+      transform: scale(1.03);
+    }
+
+    /* ── 10. GALERIA (CARROSSEL) ── */
+    #galeria {
+      background: var(--cream);
+      text-align: left;
+    }
+
+    .galeria-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .galeria-header .section-body {
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .galeria-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 100%;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      height: 340px;
+      position: relative;
+      background: #e8eef2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* Canguru slides: native small images, no upscale */
+    .carousel-slide.canguru-slide {
+      background: #dde6ed;
+    }
+
+    .carousel-slide.canguru-slide img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: none;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+      filter: contrast(1.08) saturate(1.05) brightness(1.02);
+    }
+
+    /* ── Location panel ── */
+    .galeria-location {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .location-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.8rem 2rem;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .location-card:hover {
+      border-color: var(--sage);
+      box-shadow: 0 8px 25px rgba(122, 175, 200, 0.12);
+    }
+
+    .location-card .loc-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 0.5rem;
+    }
+
+    .location-card .loc-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 0.6rem;
+    }
+
+    .location-card .loc-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .location-card .loc-address {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: var(--muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      flex: 1;
+    }
+
+    .location-card .loc-address svg {
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+      width: 16px;
+      height: 16px;
+      stroke: var(--sage);
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .loc-maps-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--sage);
+      text-decoration: none;
+      white-space: nowrap;
+      border: 1px solid var(--sage);
+      border-radius: 50px;
+      padding: 0.4rem 0.9rem;
+      transition: background 0.25s, color 0.25s;
+      flex-shrink: 0;
+      align-self: center;
+    }
+
+    .loc-maps-link svg {
+      width: 13px;
+      height: 13px;
+      fill: currentColor;
+    }
+
+    .loc-maps-link:hover {
+      background: var(--sage);
+      color: #fff;
+    }
+
+    /* Secondary locations strip */
+    .galeria-secondary {
+      margin-top: 3rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2rem 2.5rem;
+    }
+
+    .galeria-secondary .sec-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1.4rem;
+    }
+
+    .sec-locations {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .sec-loc-item .sec-city {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 0.5rem;
+    }
+
+    .sec-loc-item .sec-clinic {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 0.6rem;
+    }
+
+    .sec-loc-item .sec-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .sec-loc-item .sec-address {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      flex: 1;
+    }
+
+    .sec-loc-item .sec-address svg {
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+      width: 16px;
+      height: 16px;
+      stroke: var(--sage);
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .carousel-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
+      padding: 3rem 4rem;
+      color: #fff;
+      text-align: left;
+    }
+
+    .carousel-caption h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+    }
+
+    .carousel-caption p {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.8);
+      font-family: 'Lato', sans-serif;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.85);
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: background 0.3s, color 0.3s, transform 0.2s;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .carousel-btn:hover {
+      background: var(--sage);
+      color: #fff;
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .carousel-btn.prev {
+      left: 20px;
+    }
+
+    .carousel-btn.next {
+      right: 20px;
+    }
+
+    .carousel-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.5;
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+    }
+
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--sage-light);
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .carousel-dot.active {
+      background: var(--sage);
+      transform: scale(1.2);
+    }
+
+    /* ── 11. FAQ (ACCORDION) ── */
+    #faq {
+      background: var(--warm-white);
+    }
+
+    #faq .center-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .faq-item:hover {
+      border-color: var(--sage);
+      box-shadow: 0 8px 25px rgba(122, 175, 200, 0.08);
+    }
+
+    .faq-trigger {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      text-align: left;
+      outline: none;
+    }
+
+    .faq-question {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.28rem;
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+
+    .faq-icon {
+      font-size: 1.4rem;
+      color: var(--sage);
+      transition: transform 0.3s ease;
+      font-weight: 300;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+      padding: 0 2rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 0 2rem 1.6rem 2rem;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    /* ── FOOTER / CONTATO ── */
+    footer {
+      background: #1e1e1c;
+      color: rgba(255, 255, 255, 0.7);
+      padding: 5rem 6vw 2.5rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1.2fr 1fr 1.2fr;
+      gap: 3.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      color: #fff;
+      margin-bottom: 0.8rem;
+      font-weight: 500;
+    }
+
+    .footer-brand span {
+      color: var(--sage);
+    }
+
+    .footer-tagline {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.5);
+      max-width: 280px;
+    }
+
+    .footer-col h4 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage-light);
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-col a,
+    .footer-col p {
+      display: block;
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      line-height: 1.7;
+      transition: color 0.2s;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-col a:hover {
+      color: var(--sage-light);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-copy {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-agendar-footer {
+      display: inline-block;
+      padding: 0.7rem 1.8rem;
+      border: 1.5px solid var(--sage);
+      border-radius: 50px;
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.2s;
+      background: transparent;
+    }
+
+    .btn-agendar-footer:hover {
+      background: var(--sage);
+      transform: translateY(-1px);
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 0.8s cubic-bezier(0.215, 0.610, 0.355, 1), transform 0.8s cubic-bezier(0.215, 0.610, 0.355, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      #navbar {
+        padding: 1rem 1.5rem;
+      }
+
+      #sobre-mim,
+      #o-que-e-avaliacao,
+      #tcc,
+      #quando,
+      #psicoterapia {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .o-que-e-img {
+        order: 1;
+      }
+
+      .o-que-e-text {
+        order: 2;
+      }
+
+      .quando-img {
+        order: 1;
+      }
+
+      .quando-text {
+        order: 2;
+      }
+
+      .sobre-mim-img::after {
+        display: none;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+      }
+
+      .timeline::after {
+        left: 20px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        padding-left: 3.5rem;
+        padding-right: 1rem;
+        text-align: left !important;
+      }
+
+      .timeline-item.right {
+        left: 0;
+      }
+
+      .timeline-item::after {
+        left: 11px !important;
+        right: auto !important;
+      }
+
+      .timeline-item.left::after {
+        left: 11px !important;
+        right: auto !important;
+      }
+
+      .grid-cards {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .galeria-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .sec-locations {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      section {
+        padding: 4.5rem 5vw;
+      }
+
+      .grid-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-title {
+        font-size: 2.2rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .carousel-slide {
+        height: 260px;
+      }
+
+      .carousel-caption {
+        padding: 1.5rem;
+      }
+
+      .carousel-caption h3 {
+        font-size: 1.3rem;
+      }
+
+      .carousel-btn {
+        width: 38px;
+        height: 38px;
+      }
+
+      .carousel-btn.prev {
+        left: 10px;
+      }
+
+      .carousel-btn.next {
+        right: 10px;
+      }
+
+      /* ── Navbar mobile ── */
+      #navbar {
+        padding: 0.8rem 1rem;
+        gap: 0.5rem;
+      }
+
+      .nav-logo .nav-name {
+        font-size: 0.78rem;
+        line-height: 1.2;
+      }
+
+      .nav-logo .nav-crp {
+        font-size: 0.6rem;
+      }
+
+      .btn-agendar {
+        padding: 0.45rem 0.9rem;
+        font-size: 0.65rem;
+        letter-spacing: 0.05em;
+        white-space: nowrap;
+      }
+
+      /* ── Hero mobile ── */
+      #hero img {
+        object-position: right center;
+      }
+
+      /* ── Indicações mobile: carrossel ── */
+      .grid-cards {
+        display: block !important;
+        position: relative;
+        width: 100%;
+        margin-top: 2rem;
+      }
+
+      .card-ind {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        opacity: 0 !important;
+        z-index: 1;
+        pointer-events: none;
+        transition: opacity 0.5s ease-in-out;
+        transform: none !important;
+      }
+
+      .card-ind.active-mobile {
+        position: relative;
+        opacity: 1 !important;
+        z-index: 2;
+        pointer-events: auto;
+      }
+
+      .cards-nav-mobile {
+        display: flex !important;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .cards-nav-mobile .carousel-btn {
+        position: static !important;
+        transform: none !important;
+        width: 44px;
+        height: 44px;
+        border: 1px solid var(--border);
+      }
+
+      /* ── Location cards: stack button below address ── */
+      .loc-row,
+      .sec-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+
+      .galeria-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 1. NAVBAR (Hero & Global Anchor) -->
+  <nav id="navbar">
+    <a href="#" class="nav-logo">
+      <span class="nav-name">Francisca Antonia Moreira da Rocha</span>
+      <span class="nav-crp">Neuropsicóloga · CRP 11/18395</span>
+    </a>
+    <a href="https://wa.me/5588992926317?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank"
+      class="btn-agendar" id="nav-cta">Agendar Consulta</a>
+  </nav>
+
+  <!-- 1. HERO (MANTIDO INTACTO) -->
+  <section id="hero">
+    <img fetchpriority="high" decoding="async" src="/assets/banner-hero.webp" alt="Francisca Antonia – Neuropsicóloga" />
+    <div class="hero-overlay">
+      <p class="hero-tag">Neuropsicologia · Tianguá – CE</p>
+      <h1 class="hero-title">Psicoterapia com ciência e cuidado</h1>
+      <p class="hero-sub">Um espaço seguro para cuidar da sua mente com embasamento científico</p>
+      <a href="https://wa.me/5588992926317?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank"
+        class="btn-agendar">Agendar Consulta</a>
+    </div>
+  </section>
+
+  <!-- 2. BOAS-VINDAS -->
+  <section id="boas-vindas">
+    <div class="boas-vindas-container reveal">
+      <p class="section-tag">Acolhimento</p>
+      <blockquote class="intro-quote">
+        "Olhar para a nossa mente com ciência e afeto é o primeiro passo para uma vida mais leve e integrada."
+      </blockquote>
+      <p class="section-body" style="margin: 2rem auto 0; text-align: center;">
+        Seja muito bem-vindo(a). Sou Antonia Moreira, neuropsicóloga dedicada a oferecer um espaço seguro de
+        escuta, compreensão e intervenções baseadas em evidências para acompanhar você ou sua família no caminho do
+        bem-estar e autoconhecimento.
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. SOBRE MIM (ATUALIZADO COM DADOS REAIS DE DIRETRIZES.MD) -->
+  <section id="sobre-mim">
+    <div class="sobre-mim-img reveal">
+      <img loading="lazy" decoding="async" src="/assets/6CC080E0-D686-4837-948D-4A3B67F41C45.webp"
+        alt="Francisca Antonia – Neuropsicóloga no consultório" />
+    </div>
+    <div class="reveal" style="transition-delay:0.15s;">
+      <p class="section-tag">Sobre a profissional</p>
+      <h2 class="section-title">Francisca Antônia Moreira da Rocha</h2>
+      <p class="section-body" style="font-weight: 700; color: var(--charcoal); margin-bottom: 1rem;">
+        Neuropsicóloga e Terapeuta Cognitivo-Comportamental (CRP 11/18395)
+      </p>
+      <p class="section-body">
+        Com uma sólida formação e atuação focada na ética clínica, busco integrar a empatia humana ao rigor científico
+        para compreender e intervir nas mais diversas demandas de saúde mental, do neurodesenvolvimento e do
+        comportamento.
+      </p>
+      <div class="credentials">
+        <div class="cred-item">
+          <span class="cred-dot"></span>
+          <span>Graduação em Psicologia</span>
+        </div>
+        <div class="cred-item">
+          <span class="cred-dot"></span>
+          <span>Especialista em Psicologia Escolar</span>
+        </div>
+        <div class="cred-item">
+          <span class="cred-dot"></span>
+          <span>Especialista em Neuropsicologia</span>
+        </div>
+        <div class="cred-item">
+          <span class="cred-dot"></span>
+          <span>Pós-graduanda em Neuropsicologia dos Transtornos Mentais</span>
+        </div>
+        <div class="cred-item">
+          <span class="cred-dot"></span>
+          <span>Formação sólida em Avaliação Psicológica</span>
+        </div>
+        <div class="cred-item">
+          <span class="cred-dot"></span>
+          <span>Formação em Terapia Cognitivo-Comportamental (TCC)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. O QUE E AVALIACAO NEUROPSICOLOGICA -->
+  <section id="o-que-e-avaliacao">
+    <div class="o-que-e-text reveal">
+      <p class="section-tag">Entendimento</p>
+      <h2 class="section-title">O que é a Avaliação Neuropsicológica?</h2>
+      <div class="divider"></div>
+      <p class="section-body">
+        Trata-se de um processo clínico minucioso e investigativo cujo objetivo é compreender detalhadamente o
+        funcionamento cognitivo, emocional e comportamental de uma pessoa.
+      </p>
+      <p class="section-body" style="margin-top:1.2rem;">
+        Por meio de entrevistas estruturadas e da aplicação de testes e escalas validadas cientificamente, investigamos
+        como o cérebro processa informações no dia a dia. Isso ajuda a subsidiar diagnósticos médicos mais precisos,
+        mensurar o desempenho cognitivo e definir o plano de intervenção mais adequado e individualizado.
+      </p>
+    </div>
+    <div class="o-que-e-img reveal" style="transition-delay:0.15s;">
+      <img loading="lazy" decoding="async" src="/assets/IMG_9269.webp" alt="Processo de avaliação neuropsicológica" />
+    </div>
+  </section>
+
+  <!-- 5. INDICACOES DA AVALIACAO -->
+  <section id="indicacoes">
+    <div class="reveal">
+      <p class="section-tag">Aplicações</p>
+      <h2 class="section-title">Quando e para quem é indicada?</h2>
+      <p class="section-body" style="margin: 0 auto; text-align: center;">
+        A avaliação serve como base para diagnósticos claros e para direcionamento terapêutico em diversas fases do
+        desenvolvimento humano.
+      </p>
+    </div>
+
+    <div class="grid-cards">
+      <!-- Card 1 -->
+      <div class="card-ind reveal">
+        <div class="card-icon">🧠</div>
+        <h3 class="card-title">Dificuldades de Aprendizagem</h3>
+        <p class="card-body">
+          Identificação de problemas persistententes com leitura, escrita, matemática, atenção ou memória em crianças e
+          adolescentes. Indicação de quadros como dislexia, disortografia e TDAH.
+        </p>
+      </div>
+      <!-- Card 2 -->
+      <div class="card-ind reveal" style="transition-delay:0.1s;">
+        <div class="card-icon">🌱</div>
+        <h3 class="card-title">Neurodesenvolvimento</h3>
+        <p class="card-body">
+          Auxílio no psicodiagnóstico e mapeamento do perfil cognitivo de condições complexas como o Transtorno do
+          Espectro Autista (TEA), TDAH, deficiência intelectual e atrasos de linguagem.
+        </p>
+      </div>
+      <!-- Card 3 -->
+      <div class="card-ind reveal" style="transition-delay:0.2s;">
+        <div class="card-icon">🔍</div>
+        <h3 class="card-title">Investigação Diagnóstica</h3>
+        <p class="card-body">
+          Apoio a médicos psiquiatras e neurologistas em casos de dúvidas complexas de diagnóstico, trazendo dados
+          objetivos sobre o funcionamento mental e intelectual do paciente.
+        </p>
+      </div>
+      <!-- Card 4 -->
+      <div class="card-ind reveal">
+        <div class="card-icon">📊</div>
+        <h3 class="card-title">Habilidades Específicas</h3>
+        <p class="card-body">
+          Mapeamento quantitativo e qualitativo de funções como inteligência (QI), atenção concentrada e alternada,
+          memória de curto/longo prazo, funções executivas e raciocínio lógico.
+        </p>
+      </div>
+      <!-- Card 5 -->
+      <div class="card-ind reveal" style="transition-delay:0.1s;">
+        <div class="card-icon">🎭</div>
+        <h3 class="card-title">Demandas Emocionais</h3>
+        <p class="card-body">
+          Investigação de causas biológicas e cognitivas subjacentes a mudanças bruscas de humor, impulsividade
+          acentuada, retraimento social excessivo ou agressividade em crianças ou adultos.
+        </p>
+      </div>
+    </div>
+
+    <!-- Botões de navegação do carrossel no mobile -->
+    <div class="cards-nav-mobile">
+      <button class="carousel-btn prev" id="indicacoes-prev" aria-label="Card anterior">
+        <svg viewBox="0 0 24 24">
+          <path d="M15 19l-7-7 7-7" stroke="currentColor" />
+        </svg>
+      </button>
+      <button class="carousel-btn next" id="indicacoes-next" aria-label="Próximo card">
+        <svg viewBox="0 0 24 24">
+          <path d="M9 5l7 7-7 7" stroke="currentColor" />
+        </svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- 6. ETAPAS (LINHA DO TEMPO) -->
+  <section id="etapas">
+    <div class="center-header reveal">
+      <p class="section-tag">O Método</p>
+      <h2 class="section-title">Como funciona o processo de avaliação?</h2>
+      <p class="section-body" style="margin: 0 auto;">
+        Um processo minucioso estruturado em média ao longo de <strong>10 sessões presenciais</strong> para coleta
+        precisa e laudo fundamentado.
+      </p>
+    </div>
+
+    <div class="timeline">
+      <!-- Etapa 1 -->
+      <div class="timeline-item left reveal">
+        <div class="timeline-content">
+          <p class="timeline-step">Fase 1</p>
+          <h3 class="timeline-title">Anamnese & Contato Escolar</h3>
+          <p class="timeline-desc">
+            Entrevistas detalhadas com o paciente ou responsáveis para entender o histórico de vida e queixas
+            principais. Caso necessário, realiza-se o contato com a equipe pedagógica da escola.
+          </p>
+        </div>
+      </div>
+      <!-- Etapa 2 -->
+      <div class="timeline-item right reveal">
+        <div class="timeline-content">
+          <p class="timeline-step">Fase 2</p>
+          <h3 class="timeline-title">Aplicação de Instrumentos</h3>
+          <p class="timeline-desc">
+            Sessões práticas voltadas para a aplicação de testes neuropsicológicos, questionários, inventários e escalas
+            padronizadas e validadas pelo Conselho Federal de Psicologia (CFP).
+          </p>
+        </div>
+      </div>
+      <!-- Etapa 3 -->
+      <div class="timeline-item left reveal">
+        <div class="timeline-content">
+          <p class="timeline-step">Fase 3</p>
+          <h3 class="timeline-title">Análise & Laudo Técnico</h3>
+          <p class="timeline-desc">
+            Compilação, correção dos testes baseados nas tabelas oficiais de idade/escolaridade, interpretação
+            qualitativa e escrita rigorosa do laudo neuropsicológico oficial.
+          </p>
+        </div>
+      </div>
+      <!-- Etapa 4 -->
+      <div class="timeline-item right reveal">
+        <div class="timeline-content">
+          <p class="timeline-step">Fase 4</p>
+          <h3 class="timeline-title">Entrevista Devolutiva</h3>
+          <p class="timeline-desc">
+            Sessão final com a entrega física e digital do laudo do paciente. Explicação detalhada de cada indicador
+            cognitivo, achados do perfil psicológico e alinhamento dos encaminhamentos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. ABORDAGEM TCC -->
+  <section id="tcc">
+    <div class="reveal">
+      <p class="section-tag">Abordagem Clínica</p>
+      <h2 class="section-title">Terapia Cognitivo-Comportamental (TCC)</h2>
+      <div class="divider"></div>
+      <p class="section-body">
+        Além da avaliação, atuo como psicoterapeuta clínica sob a abordagem da Terapia Cognitivo-Comportamental (TCC). A
+        TCC é uma abordagem estruturada, focada no presente e amplamente validada pela ciência.
+      </p>
+      <p class="section-body" style="margin-top: 1.2rem;">
+        Nela, trabalhamos juntos para compreender a relação direta entre o que pensamos, como nos sentimos e de que
+        forma agimos. Identificando pensamentos disfuncionais e comportamentos prejudiciais, desenvolvemos estratégias
+        práticas para modificar padrões, resultando em mais autonomia e alívio emocional.
+      </p>
+    </div>
+    <div class="tcc-img reveal" style="transition-delay:0.15s;">
+      <img loading="lazy" decoding="async" src="/assets/20008361.webp" alt="Francisca Antonia – Terapia Cognitivo-Comportamental" />
+    </div>
+  </section>
+
+  <!-- 8. QUANDO BUSCAR AJUDA -->
+  <section id="quando">
+    <div class="quando-text reveal">
+      <p class="section-tag">Psicoterapia</p>
+      <h2 class="section-title">Quando faz sentido buscar ajuda?</h2>
+      <div class="divider"></div>
+      <p class="section-body">
+        Você não precisa estar passando por um momento de sofrimento extremo para iniciar a psicoterapia. Quando a
+        ansiedade cotidiana interfere no seu trabalho, quando os relacionamentos parecem desgastantes, quando os
+        pensamentos aceleram ou o sono se torna instável — esses são sinais do seu corpo de que é hora de buscar apoio.
+      </p>
+      <p class="section-body" style="margin-top:1rem;">
+        A psicoterapia oferece um espaço de escuta qualificada e sem julgamentos. Juntos, traçamos caminhos saudáveis
+        para enfrentar as pressões cotidianas e desenvolver resiliência emocional.
+      </p>
+    </div>
+    <div class="quando-img reveal" style="transition-delay:0.15s;">
+      <img loading="lazy" decoding="async" src="/assets/IMG_3388.webp" alt="Sinais para buscar psicoterapia" />
+    </div>
+  </section>
+
+  <!-- 9. PSICOTERAPIA NA PRATICA -->
+  <section id="psicoterapia">
+    <div class="psicoterapia-img reveal">
+      <img loading="lazy" decoding="async" src="/assets/20008380.webp" alt="Francisca Antonia – Atendimento Psicoterapêutico" />
+    </div>
+    <div class="reveal" style="transition-delay:0.15s;">
+      <p class="section-tag">Processo Clínico</p>
+      <h2 class="section-title">Como funciona a psicoterapia na prática?</h2>
+      <div class="divider"></div>
+      <p class="section-body">
+        A psicoterapia é um processo colaborativo e ativo. As sessões ocorrem em um espaço seguro, acolhedor e
+        totalmente confidencial, onde você pode expressar suas angústias e desafios sem receio de julgamentos.
+      </p>
+      <p class="section-body" style="margin-top: 1.2rem;">
+        Com base na Terapia Cognitivo-Comportamental, definimos metas claras logo nos primeiros encontros. Ao longo das
+        sessões, identificamos pensamentos automáticos e padrões de comportamento que geram sofrimento, desenvolvendo
+        ferramentas práticas para que você aprenda a lidar com as dificuldades cotidianas de forma mais leve e autônoma.
+      </p>
+      <p class="section-body" style="margin-top: 1.2rem;">
+        O objetivo final é promover o autoconhecimento, a regulação emocional e o desenvolvimento de estratégias de
+        enfrentamento saudáveis, permitindo que você retome o protagonismo sobre sua própria vida.
+      </p>
+    </div>
+  </section>
+
+  <!-- 10. GALERIA (CARROSSEL DE FOTOS DO CONSULTÓRIO) -->
+  <section id="galeria">
+    <div class="galeria-header reveal">
+      <p class="section-tag">Nosso Espaço</p>
+      <h2 class="section-title">Conheça o Consultório</h2>
+      <p class="section-body">
+        Um espaço planejado com rigor e carinho para oferecer o máximo de conforto, acolhimento e privacidade durante as
+        sessões e avaliações.
+      </p>
+    </div>
+
+    <div class="galeria-layout reveal">
+      <!-- Carrossel (esquerda) -->
+      <div>
+        <div class="carousel-container">
+          <div class="carousel-track" id="carousel-track">
+            <!-- Lacme slides -->
+            <div class="carousel-slide">
+              <img loading="lazy" decoding="async" src="/assets/lacme-1.webp" alt="Lacme – Espaço Clínico" />
+              <div class="carousel-caption">
+                <h3>Lacme · Espaço Clínico</h3>
+                <p>Ambiente acolhedor e preparado para oferecer o melhor atendimento.</p>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <img loading="lazy" decoding="async" src="/assets/lacme-2.webp" alt="Lacme – Consultório" />
+              <div class="carousel-caption">
+                <h3>Lacme · Consultório</h3>
+                <p>Estrutura completa para avaliações neuropsicológicas com conforto e privacidade.</p>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <img loading="lazy" decoding="async" src="/assets/lacme-3.webp" alt="Lacme – Área de Atendimento" />
+              <div class="carousel-caption">
+                <h3>Lacme · Área de Atendimento</h3>
+                <p>Cada detalhe pensado para proporcionar bem-estar e tranquilidade durante as sessões.</p>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <img loading="lazy" decoding="async" src="/assets/lacme-4.webp" alt="Lacme – Ambiente Terapêutico" />
+              <div class="carousel-caption">
+                <h3>Lacme · Ambiente Terapêutico</h3>
+                <p>Um espaço seguro e humanizado onde ciência e cuidado se encontram.</p>
+              </div>
+            </div>
+            <!-- Canguru slides -->
+            <div class="carousel-slide canguru-slide">
+              <img loading="lazy" decoding="async" src="/assets/canguru-1.webp" alt="Refúgio do Canguru – Espaço" />
+              <div class="carousel-caption">
+                <h3>Refúgio do Canguru · Espaço</h3>
+                <p>Clínica humanizada com estrutura pensada para o bem-estar do paciente.</p>
+              </div>
+            </div>
+            <div class="carousel-slide canguru-slide">
+              <img loading="lazy" decoding="async" src="/assets/canguru-2.webp" alt="Refúgio do Canguru – Consultório" />
+              <div class="carousel-caption">
+                <h3>Refúgio do Canguru · Consultório</h3>
+                <p>Ambiente tranquilo e acolhedor para sessões de psicoterapia.</p>
+              </div>
+            </div>
+            <div class="carousel-slide canguru-slide">
+              <img loading="lazy" decoding="async" src="/assets/canguru-3.webp" alt="Refúgio do Canguru – Atendimento" />
+              <div class="carousel-caption">
+                <h3>Refúgio do Canguru · Atendimento</h3>
+                <p>Estrutura equipada para proporcionar uma experiência clínica de qualidade.</p>
+              </div>
+            </div>
+            <div class="carousel-slide canguru-slide">
+              <img loading="lazy" decoding="async" src="/assets/canguru-4.webp" alt="Refúgio do Canguru – Área Interna" />
+              <div class="carousel-caption">
+                <h3>Refúgio do Canguru · Área Interna</h3>
+                <p>Espaço planejado com carinho para receber pacientes de todas as idades.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <button class="carousel-btn prev" id="carousel-prev">
+            <svg viewBox="0 0 24 24">
+              <path d="M15 19l-7-7 7-7" stroke="currentColor" />
+            </svg>
+          </button>
+          <button class="carousel-btn next" id="carousel-next">
+            <svg viewBox="0 0 24 24">
+              <path d="M9 5l7 7-7 7" stroke="currentColor" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Dots navigation -->
+        <div class="carousel-dots" id="carousel-dots"></div>
+      </div>
+
+      <!-- Localização (direita) -->
+      <div class="galeria-location">
+        <!-- Card Lacme -->
+        <div class="location-card">
+          <p class="loc-label">Consultório · Tianguá – CE</p>
+          <p class="loc-name">Lacme – Excelência em Saúde e Beleza</p>
+          <div class="loc-row">
+            <p class="loc-address">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+              </svg>
+              R. Teófilo Ramos, 259 – Centro<br>Tianguá – CE, 62320-041
+            </p>
+            <a class="loc-maps-link"
+              href="https://www.google.com/maps/search/?api=1&query=R.+Teófilo+Ramos,+259+Centro+Tianguá+CE"
+              target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+              </svg>
+              Ver no Google
+            </a>
+          </div>
+        </div>
+        <!-- Card Refúgio do Canguru -->
+        <div class="location-card">
+          <p class="loc-label">Consultório · Tianguá – CE</p>
+          <p class="loc-name">Clínica Refúgio do Canguru</p>
+          <div class="loc-row">
+            <p class="loc-address">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+              </svg>
+              R. Lauro Firmino de Aguiar, 689<br>Tianguá – CE, 62322-525
+            </p>
+            <a class="loc-maps-link"
+              href="https://www.google.com/maps/search/?api=1&query=R.+Lauro+Firmino+de+Aguiar,+689+Tianguá+CE"
+              target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+              </svg>
+              Ver no Google
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Atendimentos em outras cidades -->
+    <div class="galeria-secondary reveal">
+      <p class="sec-label">Atendimentos também em</p>
+      <div class="sec-locations">
+        <div class="sec-loc-item">
+          <p class="sec-city">Atendimento · Ubajara – CE</p>
+          <p class="sec-clinic">Clínica Psicoeducar</p>
+          <div class="sec-row">
+            <p class="sec-address">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+              </svg>
+              Próx. ao Novo Mercado Municipal, R. José Lopes Freire – Centro – Ubajara – CE, 62350-000
+            </p>
+            <a class="loc-maps-link"
+              href="https://www.google.com/maps/search/?api=1&query=R.+José+Lopes+Freire+Centro+Ubajara+CE"
+              target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+              </svg>
+              Ver no Google
+            </a>
+          </div>
+        </div>
+        <div class="sec-loc-item">
+          <p class="sec-city">Atendimento · São Benedito – CE</p>
+          <p class="sec-clinic">Clínica Nossa Senhora das Graças</p>
+          <div class="sec-row">
+            <p class="sec-address">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+              </svg>
+              R. Italiano Júlio Filizola, 884 – Centro – São Benedito – CE, 62370-000
+            </p>
+            <a class="loc-maps-link"
+              href="https://www.google.com/maps/search/?api=1&query=R.+Italiano+Júlio+Filizola,+884+Centro+São+Benedito+CE"
+              target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+              </svg>
+              Ver no Google
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. PERGUNTAS FREQUENTES (FAQ ACCORDION) -->
+  <section id="faq">
+    <div class="center-header reveal">
+      <p class="section-tag">Dúvidas</p>
+      <h2 class="section-title">Perguntas Frequentes</h2>
+      <p class="section-body" style="margin: 0 auto;">
+        Esclarecimentos rápidos sobre o funcionamento das sessões e do processo avaliativo.
+      </p>
+    </div>
+
+    <div class="faq-container reveal">
+      <!-- FAQ 1 -->
+      <div class="faq-item">
+        <button class="faq-trigger">
+          <span class="faq-question">Como funciona a Avaliação Neuropsicológica?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            A avaliação é um diagnóstico do funcionamento cognitivo (atenção, memória, raciocínio) e emocional.
+            Iniciamos com uma entrevista detalhada para compreender as queixas, aplicamos testes neuropsicológicos
+            específicos, compilamos os resultados em um laudo técnico completo e realizamos uma entrevista devolutiva
+            para orientações clínicas.
+          </p>
+        </div>
+      </div>
+      <!-- FAQ 2 -->
+      <div class="faq-item">
+        <button class="faq-trigger">
+          <span class="faq-question">Quantas sessões são necessárias no total?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Para que a avaliação seja rigorosa e ética, são necessárias em média 10 sessões. Esse tempo é
+            distribuído entre entrevistas de anamnese, aplicação prática dos instrumentos cognitivos, análise de
+            relatórios escolares e a sessão final de devolução e entrega de laudo.
+          </p>
+        </div>
+      </div>
+      <!-- FAQ 3 -->
+      <div class="faq-item">
+        <button class="faq-trigger">
+          <span class="faq-question">Para que serve o Laudo Neuropsicológico?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            O laudo serve como um mapeamento científico das potencialidades e dificuldades de um indivíduo. É
+            fundamental para subsidiar diagnósticos de médicos (como neurologistas e psiquiatras), direcionar adaptações
+            pedagógicas na escola e planejar o tratamento em terapia de reabilitação.
+          </p>
+        </div>
+      </div>
+      <!-- FAQ 4 -->
+      <div class="faq-item">
+        <button class="faq-trigger">
+          <span class="faq-question">Vocês atendem online ou presencialmente?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            A Avaliação Neuropsicológica ocorre de forma estritamente presencial no consultório em Tianguá - CE, Ubajara
+            - CE e São Benedito - CE
+            devido à necessidade de aplicação controlada de testes físicos. No entanto, os atendimentos de
+            Psicoterapia Clínica (TCC) podem ser realizados de forma presencial ou online para todo o Brasil.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER & CONTATO -->
+  <footer id="contato">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand">Francisca Antonia Moreira da Rocha</p>
+        <p class="footer-tagline" style="margin-bottom:0.4rem;">Neuropsicóloga & Psicóloga Clínica · CRP 11/18395</p>
+        <p class="footer-tagline">Espaço dedicado ao acolhimento humanizado integrado ao embasamento científico.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <a href="https://wa.me/5588992926317" target="_blank">(88) 9 9292-6317</a>
+        <a href="mailto:antoniamoreira3010@gmail.com">antoniamoreira3010@gmail.com</a>
+      </div>
+      <div class="footer-col">
+        <h4>Redes Sociais</h4>
+        <a href="https://instagram.com/antoniamoreira_neuropsi" target="_blank">@antoniamoreira_neuropsi</a>
+      </div>
+      <div class="footer-col">
+        <h4>Localização</h4>
+        <p>Tianguá – CE</p>
+        <p>Atendimento presencial e online para todo o país</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Francisca Antonia Moreira da Rocha · CRP 11/18395 · Todos os direitos reservados</p>
+      <a href="https://wa.me/5588992926317?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank"
+        class="btn-agendar-footer">Agendar Consulta</a>
+    </div>
+  </footer>
+
+  <script>
+    // ── Navbar fade on scroll ──
+    const navbar = document.getElementById('navbar');
+    const hero = document.getElementById('hero');
+
+    function updateNavbar() {
+      const heroBottom = hero.getBoundingClientRect().bottom;
+      const progress = 1 - Math.max(0, Math.min(1, heroBottom / window.innerHeight));
+      if (progress >= 1) {
+        navbar.classList.add('hidden');
+      } else {
+        navbar.classList.remove('hidden');
+        navbar.style.opacity = String(1 - progress * 1.4);
+      }
+    }
+
+    window.addEventListener('scroll', updateNavbar, { passive: true });
+
+    // ── Scroll reveal ──
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealEls.forEach(el => observer.observe(el));
+
+    // (Video observer removed as video section was replaced with image + text)
+
+    // ── FAQ Accordion ──
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const trigger = item.querySelector('.faq-trigger');
+      const answer = item.querySelector('.faq-answer');
+
+      trigger.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+
+        // Close other items
+        faqItems.forEach(i => {
+          i.classList.remove('active');
+          i.querySelector('.faq-answer').style.maxHeight = null;
+        });
+
+        if (!isActive) {
+          item.classList.add('active');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+
+    // ── Carousel Logic ──
+    const track = document.getElementById('carousel-track');
+    const slides = Array.from(track.children);
+    const nextBtn = document.getElementById('carousel-next');
+    const prevBtn = document.getElementById('carousel-prev');
+    const dotsNav = document.getElementById('carousel-dots');
+
+    let currentIndex = 0;
+    let autoPlayTimer;
+
+    // Create dot indicators
+    slides.forEach((_, index) => {
+      const dot = document.createElement('button');
+      dot.classList.add('carousel-dot');
+      if (index === 0) dot.classList.add('active');
+      dot.setAttribute('aria-label', `Slide ${index + 1}`);
+      dotsNav.appendChild(dot);
+    });
+
+    const dots = Array.from(dotsNav.children);
+
+    const updateCarousel = (index) => {
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[index].classList.add('active');
+      currentIndex = index;
+    };
+
+    const nextSlide = () => {
+      let index = currentIndex + 1;
+      if (index >= slides.length) index = 0;
+      updateCarousel(index);
+    };
+
+    const prevSlide = () => {
+      let index = currentIndex - 1;
+      if (index < 0) index = slides.length - 1;
+      updateCarousel(index);
+    };
+
+    nextBtn.addEventListener('click', () => {
+      nextSlide();
+      resetAutoplay();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      resetAutoplay();
+    });
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        updateCarousel(index);
+        resetAutoplay();
+      });
+    });
+
+    const startAutoplay = () => {
+      autoPlayTimer = setInterval(nextSlide, 5000);
+    };
+
+    const resetAutoplay = () => {
+      clearInterval(autoPlayTimer);
+      startAutoplay();
+    };
+
+    // Start Autoplay
+    startAutoplay();
+
+    // ── Indicações Carousel Mobile ──
+    const indicacoesCards = Array.from(document.querySelectorAll('#indicacoes .card-ind'));
+    const indPrevBtn = document.getElementById('indicacoes-prev');
+    const indNextBtn = document.getElementById('indicacoes-next');
+    let indCurrentIndex = 0;
+    let indTimer;
+
+    const updateIndicacoesMobile = (index) => {
+      indicacoesCards.forEach((card, i) => {
+        if (i === index) {
+          card.classList.add('active-mobile');
+        } else {
+          card.classList.remove('active-mobile');
+        }
+      });
+      indCurrentIndex = index;
+    };
+
+    const nextIndicacoesCard = () => {
+      let index = indCurrentIndex + 1;
+      if (index >= indicacoesCards.length) index = 0;
+      updateIndicacoesMobile(index);
+    };
+
+    const prevIndicacoesCard = () => {
+      let index = indCurrentIndex - 1;
+      if (index < 0) index = indicacoesCards.length - 1;
+      updateIndicacoesMobile(index);
+    };
+
+    const startIndAutoplay = () => {
+      indTimer = setInterval(nextIndicacoesCard, 4000);
+    };
+
+    const resetIndAutoplay = () => {
+      clearInterval(indTimer);
+      startIndAutoplay();
+    };
+
+    if (indicacoesCards.length > 0) {
+      updateIndicacoesMobile(0);
+      startIndAutoplay();
+
+      indNextBtn.addEventListener('click', () => {
+        nextIndicacoesCard();
+        resetIndAutoplay();
+      });
+
+      indPrevBtn.addEventListener('click', () => {
+        prevIndicacoesCard();
+        resetIndAutoplay();
+      });
+    }
+  </script>
+</body>
+
+</html>
