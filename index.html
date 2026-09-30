@@ -1331,6 +1331,18 @@
       .loc-maps-link::after,
       .carousel-btn::after { animation: none; }
     }
+
+    .nav-logo { flex-direction: row; align-items: center; gap: 0.75rem; }
+    .nav-logo-image { width: 48px; height: auto; flex-shrink: 0; }
+    .nav-wordmark { display: flex; flex-direction: column; gap: 0.05rem; min-width: 0; }
+    .nav-logo .nav-crp { color: #ffffff; }
+    .footer-logo-image { display: block; width: 80px; height: auto; margin-bottom: 1rem; }
+    @media (max-width: 768px) {
+      .nav-logo { min-width: 0; gap: 0.5rem; }
+      .nav-logo-image { width: 32px; }
+      .nav-logo .nav-crp { line-height: 1.4; overflow-wrap: normal; }
+      #nav-cta { flex-shrink: 0; }
+    }
   </style>
 </head>
 
@@ -1339,8 +1351,11 @@
   <!-- 1. NAVBAR (Hero & Global Anchor) -->
   <nav id="navbar">
     <a href="#" class="nav-logo">
+      <img class="nav-logo-image" src="/assets/logo-antonia.webp" width="160" height="112" alt="Logo Antonia Moreira" decoding="async" />
+      <span class="nav-wordmark">
       <span class="nav-name">Antonia Moreira</span>
       <span class="nav-crp">Neuropsicóloga e Psicóloga · CRP 11/18395</span>
+      </span>
     </a>
     <a href="https://wa.me/5588992926317?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank"
       class="btn-agendar" id="nav-cta">Agendar Consulta</a>
@@ -1912,6 +1927,7 @@
   <footer id="contato">
     <div class="footer-grid">
       <div>
+        <img class="footer-logo-image" src="/assets/logo-antonia.webp" width="160" height="112" alt="Logo Antonia Moreira" loading="lazy" decoding="async" />
         <p class="footer-brand">Antonia Moreira</p>
         <p class="footer-tagline" style="margin-bottom:0.4rem;">Neuropsicóloga & Psicóloga Clínica · CRP 11/18395</p>
         <p class="footer-tagline">Espaço dedicado ao acolhimento humanizado integrado ao embasamento científico.</p>
