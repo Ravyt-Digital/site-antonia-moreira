@@ -1357,6 +1357,10 @@
       border-color: #A9691A;
       color: #ffffff;
     }
+
+    .footer-locations { list-style: none; margin: 0 0 0.8rem; padding: 0; display: grid; gap: 0.6rem; }
+    .footer-locations li { display: flex; align-items: flex-start; gap: 0.55rem; font-size: 0.9rem; line-height: 1.65; color: rgba(255, 255, 255, 0.5); }
+    .footer-locations svg { width: 16px; height: 16px; flex-shrink: 0; margin-top: 0.2rem; fill: none; stroke: #A9691A; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
   </style>
 </head>
 
@@ -1976,7 +1980,12 @@
       </div>
       <div class="footer-col">
         <h4>Locais de atendimento</h4>
-        <p>Tianguá · Ubajara · São Benedito · Guaraciaba do Norte – CE</p>
+        <ul class="footer-locations">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Tianguá</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Ubajara</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>São Benedito</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Guaraciaba do Norte – CE</span></li>
+        </ul>
         <p>Psicoterapia presencial e online.</p>
       </div>
     </div>
